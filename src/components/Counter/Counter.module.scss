@@ -1,0 +1,86 @@
+@import './../../vendor/_varibles.scss';
+
+.product {
+  &__count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    background-color: $background-white;
+    border-radius: 10px;
+    border: $border-main;
+    width: 135px;
+    height: 40px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    transition: 0.3s;
+  }
+
+  &__countProperity {
+    @include text(
+      $font-small-14,
+      $weight-500,
+      $line-height-small-14,
+      $color-blue-button-text
+    );
+  }
+
+  &__btnCount {
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    padding: 0;
+    @include text(
+      $font-medium-24,
+      $weight-500,
+      $line-height-medium-24,
+      $color-blue-button-text
+    );
+
+    &_type_minus {
+      background-image: url('../../images/minus.svg');
+    }
+
+    &_type_plus {
+      background-image: url('../../images/plus.svg');
+    }
+
+    &:hover {
+      color: $background-color-button-hover;
+    }
+  }
+}
+
+/* стили меньше 1024px */
+@media screen and (max-width: 1023px) {
+}
+
+/* стили меньше 480px */
+@media screen and (max-width: 480px) {
+  .product {
+    &__count {
+      order: 1;
+      column-gap: 10px;
+      width: 123px;
+      padding: 10px;
+    }
+    &__btnCount {
+      width: 20px;
+      height: 20px;
+      &_type_minus {
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &_type_plus {
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}

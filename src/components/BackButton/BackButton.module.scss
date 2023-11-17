@@ -1,0 +1,82 @@
+@import './../../vendor/_varibles';
+
+.returnElement {
+  display: inline-block;
+
+  &__btn {
+    background-image: url('../../images/back-icon.svg');
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: left;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    transition: background-image 0.3s ease;
+    &:hover {
+      background-image: url(../../images/back-icon-hover.svg);
+    }
+    &:active {
+      background-image: url(../../images/back-icon-pressed.svg);
+    }
+  }
+
+  &__title {
+    margin: 0 0 0 30px;
+    padding: 0;
+    @include text(
+      $font-small-14,
+      $weight-500,
+      $line-height-small-14,
+      $color-blue-button-text
+    );
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+      color: $background-color-button-hover;
+    }
+    &:active {
+      color: $background-color-button-pressed;
+    }
+  }
+
+  &__ref {
+    margin: 10px 35px 0;
+    padding: 0;
+    text-align: left;
+    @include text(
+      $font-small-14,
+      $weight-300,
+      $line-height-small-14,
+      $color-gray-text
+    );
+  }
+}
+
+/* стили меньше 480px */
+@media screen and (max-width: 480px) {
+  .returnElement {
+    /* margin: 0 35px; */
+    &__btn {
+      background-image: url(../../images/back-left-lg-min.svg);
+      &:hover {
+        background-image: url(../../images/back-left-lg-hover-min.svg);
+      }
+      &:active {
+        background-image: url(../../images/back-left-lg-pressed-min.svg);
+      }
+    }
+    &__title {
+      text-align: start;
+      @include text(
+        $mobile-font-32,
+        $weight-500,
+        $mobile-lh-32,
+        $color-blue-dark-title
+      );
+    }
+    &__ref {
+      display: none;
+    }
+  }
+}

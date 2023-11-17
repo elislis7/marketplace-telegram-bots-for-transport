@@ -1,0 +1,311 @@
+@import './../../vendor/_varibles';
+
+.payment {
+  padding: 60px 160px 80px 135px;
+  background-image: url('../../images/Background-1.png');
+  position: relative;
+
+  &__content {
+    width: 415px;
+    padding: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: $background-white;
+    box-shadow: $box-shadow-main;
+  }
+
+  &__title {
+    @include text(
+      $font-medium-24,
+      $weight-300,
+      $line-height-medium-24,
+      $color-gray-text
+    );
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__cardInfo {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__cardDate {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__label {
+    margin-bottom: 38px;
+    position: relative;
+  }
+
+  &__input {
+    border: none;
+    background-color: $background-input;
+    border-radius: 10px;
+    border: $border-main;
+    width: 100%;
+    min-height: 41px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    @include text(
+      $font-small-14,
+      $weight-300,
+      $line-height-small-14,
+      $color-gray-text
+    );
+
+    &::placeholder {
+      color: $color-blue-input-text;
+    }
+  }
+
+  &__inputHeading {
+    padding: 0 10px;
+    @include text(
+      $font-small-14,
+      $weight-300,
+      $line-height-small-14,
+      $color-gray-text
+    );
+  }
+
+  &__inputDate {
+    &_mm {
+      width: 64px;
+    }
+    &_gg {
+      width: 84px;
+    }
+  }
+
+  &__labelCode {
+    width: 144px;
+  }
+
+  &__cardDateSlash {
+    @include text(
+      $font-medium-24,
+      $weight-300,
+      $line-height-medium-24,
+      $color-blue-input-text
+    );
+    margin: 0 7px;
+    padding: 0;
+  }
+
+  &__totalCount {
+    @include text(
+      $font-payment-18,
+      $weight-300,
+      $line-height-payment-18,
+      $color-gray-text
+    );
+    margin: 20px 0 10px;
+  }
+
+  &__inputPromocode {
+    margin-bottom: 33px;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 0;
+    border-top: $border-main;
+  }
+
+  &__sum {
+    @include text(
+      $font-medium-24,
+      $weight-600,
+      $line-height-medium-24,
+      $color-gray-text
+    );
+  }
+
+  &__button {
+    border: none;
+    width: 178px;
+    height: 50px;
+    padding: 10px 47px;
+    background-color: $background-color-button-disable;
+    border-radius: 15px;
+    @include text(
+      $font-medium-24,
+      $weight-400,
+      $line-height-medium-24,
+      $color-button-text
+    );
+    transition: 0.3s;
+    cursor: pointer;
+    &_active {
+      background-color: $background-color-button-default;
+
+      &:hover {
+        background-color: $background-color-button-hover;
+      }
+    }
+  }
+
+  &__error {
+    position: absolute;
+    top: 66px;
+    left: 10px;
+    @include text(
+      $font-small-14,
+      $weight-300,
+      $line-height-small-14,
+      $color-red-errors
+    );
+  }
+}
+
+/* стили меньше 1024px */
+@media screen and (max-width: 1023px) {
+}
+
+/* стили меньше 480px */
+@media screen and (max-width: 480px) {
+  .payment {
+    position: relative;
+    padding: 118px 15px 50px;
+    background-image: none;
+    width: 100%;
+    &__content {
+      width: 100%;
+      padding: 25px 20px;
+      border-radius: 20px;
+    }
+    &__backButton {
+      margin-bottom: 50px;
+    }
+    &__input {
+      outline: none;
+      min-height: 41px;
+      padding: 10px 20px;
+      @include input($border-main, $background-input);
+      @include text(
+        $mobile-font-14,
+        $weight-300,
+        $mobile-lh-small-14,
+        $color-blue-dark-title
+      );
+      @include input($border-main, $background-input);
+      &:focus {
+        @include input($border-active, $background-input);
+      }
+    }
+    &__inputHeading {
+      @include text(
+        $mobile-font-14,
+        $weight-300,
+        $mobile-lh-small-14,
+        $color-blue-dark-title
+      );
+    }
+    &__labelCode {
+      display: flex;
+      text-wrap: nowrap;
+      width: 115px;
+      flex-direction: column;
+    }
+    &__cardDateSlash {
+      margin: 0 5px;
+      padding: 13px 0;
+      @include text(
+        $mobile-font-16,
+        $weight-300,
+        $mobile-lh-small-16,
+        $color-blue-input-text
+      );
+    }
+    &__totalCount {
+      display: none;
+      @include text(
+        $mobile-font-14,
+        $weight-300,
+        $mobile-lh-small-14,
+        $color-gray-text
+      );
+      margin: 20px 0 10px;
+    }
+    &__inputPromocode {
+      display: none;
+    }
+    &__total {
+      display: none;
+    }
+    &__sum {
+      display: none;
+    }
+    &__button {
+      padding: 11px 15px;
+      border-radius: 10px;
+      height: 40px;
+      width: 100%;
+      background-color: $background-color-button-disable;
+      @include text(
+        $mobile-font-14,
+        $weight-500,
+        $line-height-small-14,
+        $color-button-text
+      );
+      &_active {
+        background-color: $background-color-button-default;
+        &:hover {
+          background-color: $background-color-button-hover;
+        }
+      }
+    }
+
+    &__inputPromocodeMobile {
+      margin-top: 0;
+      margin-bottom: 33px;
+    }
+    &__totalMobile {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 30px;
+      border-top: 1px solid #d3e2f7;
+    }
+    &__totalCountMobile {
+      @include text(
+        $mobile-font-14,
+        $weight-300,
+        $mobile-lh-small-14,
+        $color-gray-text
+      );
+    }
+    &__sumMobile {
+      @include text(
+        $mobile-font-24,
+        $weight-500,
+        $mobile-lh-24,
+        $color-gray-text
+      );
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.btn {
+  background-image: url('../../../images/carousel-right-btn-banner.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 165px;
+  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* стили меньше 1024px */
+@media screen and (max-width: 1023px) {
+}
+
+/* стили меньше 480px */
+@media screen and (max-width: 480px) {
+  .btn {
+    display: none;
+  }
+}
